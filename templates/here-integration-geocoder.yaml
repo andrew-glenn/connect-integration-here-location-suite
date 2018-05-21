@@ -62,6 +62,12 @@ Resources:
       Code:
         S3Bucket: aws-quickstart
         S3Key: connect-integration-here-location-suite/functions/packages/here-integration-geocoder-test/lambda.zip
+      Environment:
+        Variables:
+          appId:
+            Ref: HLSAppId
+          appCode:
+            Ref: HLSAppCode
   GeocoderIntegrationTest:
     Type: Custom::IntegrationTest
     Version: '1.0'
@@ -95,9 +101,9 @@ Resources:
         Fn::GetAtt: GeocoderExecutionRole.Arn
       Environment:
         Variables:
-          HLSAppId:
+          appId:
             Ref: HLSAppId
-          HLSAppCode:
+          appCode:
             Ref: HLSAppCode
       Code:
         S3Bucket: aws-quickstart
