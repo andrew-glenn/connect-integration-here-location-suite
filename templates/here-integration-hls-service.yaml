@@ -17,15 +17,11 @@ Metadata:
         default: HERE Location Suite Application Code
 Parameters:
   HLSAppId:
-    AllowedPattern: ^[0-9a-zA-Z]*$
-    ConstraintDescription: HLS App ID does not meet format requirements
     Description: Your HERE Location Services App ID.
     Type: String
     MinLength: 6
     MaxLength: 64
   HLSAppCode:
-    AllowedPattern: ^[0-9a-zA-Z]*$
-    ConstraintDescription: HLS App Code does not meet format requirements
     Description: Your HERE Location Services App Code.
     Type: String
     MinLength: 6
