@@ -44,7 +44,7 @@ Resources:
           Ref: HLSAppId
         HLSAppCode:
           Ref: HLSAppCode
-  HLSGeoCodeStack:
+  HLSGeocoderStack:
     Type: AWS::CloudFormation::Stack
     Properties:
       TemplateURL: https://aws-quickstart.s3.amazonaws.com/connect-integration-here-location-suite/templates/here-integration-geocoder.yaml
