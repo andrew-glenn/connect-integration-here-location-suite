@@ -107,7 +107,7 @@ Resources:
             Ref: HLSAppCode
       Code:
         S3Bucket: aws-quickstart
-        S3Key: connect-integration-here-location-suite/functions/packages/here-integration-routing-test/lambda.zip
+        S3Key: connect-integration-here-location-suite/functions/packages/here-integration-routing/lambda.zip
   RoutingFunctionPermission:
     Type: AWS::Lambda::Permission
     Properties:
