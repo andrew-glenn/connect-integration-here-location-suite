@@ -21,10 +21,10 @@ global:
 tests:
   connect-integration-here-location-suite-geocoder:
     parameter_input: defaults.json
-    template_file: here-integration-geocoder.template
+    template_file: here-integration-geocoder.yaml
   connect-integration-here-location-suite-places:
     parameter_input: defaults.json
-    template_file: here-integration-places.template
+    template_file: here-integration-places.yaml
   connect-integration-here-location-suite-routing:
     parameter_input: defaults.json
-    template_file: here-integration-routing.template
+    template_file: here-integration-routing.yaml
