@@ -30,7 +30,7 @@ def lambda_handler(event, context):
 
   result = geocode(state, city, address)
   if result is None: return None
-  lat, lng, _ = result
+  lat, lng = result
   # send back in correct format
   position = "%s;%s" % (lat, lng)
   return {"position": position, "Status": "OK"}
