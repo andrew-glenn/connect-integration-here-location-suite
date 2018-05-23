@@ -17,12 +17,12 @@ Metadata:
         default: HERE Location Suite Application Code
 Parameters:
   HLSAppId:
-    Description: Your HERE Location Services App ID.
+    Description: Your HERE Location Suite App ID.
     Type: String
     MinLength: 6
     MaxLength: 64
   HLSAppCode:
-    Description: Your HERE Location Services App Code.
+    Description: Your HERE Location Suite App Code.
     Type: String
     MinLength: 6
     MaxLength: 64
@@ -92,7 +92,7 @@ Resources:
   GeocoderLambdaFunction:
     Type: AWS::Lambda::Function
     Properties:
-      Handler: geocoder.handler
+      Handler: geocoder-query.lambda_handler
       Runtime: python2.7
       Description: HERE HLS Geocoder API
       MemorySize: 128
