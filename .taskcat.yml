@@ -1,0 +1,82 @@
+project:
+  name: connect-integration-here-location-suite
+  owner: quickstart-eng@amazon.com
+  package_lambda: false
+  regions:
+  - ap-northeast-1
+  # - ap-northeast-2
+  # - ap-south-1
+  # - ap-southeast-1
+  # - ap-southeast-2
+  # - ca-central-1
+  # - eu-central-1
+  # - eu-west-1
+  # - sa-east-1
+  # - us-east-1
+  # - us-east-2
+  # - us-west-1
+  # - us-west-2
+tests:
+  connect-integration-here-location-suite-geocoder:
+    parameters:
+      ConnectSourceAccount: '596415240780'
+      ConnectSourceArn: arn:aws:connect:us-east-1:596415240780:instance/2e49f79e-fe45-46e9-a26a-4485af8456f1
+      HLSAppCode: deadbeef
+      HLSAppId: deadbeef
+    regions:
+    # - ap-northeast-1
+    # - ap-northeast-2
+    # - ap-south-1
+    # - ap-southeast-1
+    # - ap-southeast-2
+    # - ca-central-1
+    # - eu-central-1
+    # - eu-west-1
+    # - sa-east-1
+    - us-east-1
+    # - us-east-2
+    # - us-west-1
+    # - us-west-2
+    template: templates/here-integration-geocoder.template.yaml
+  connect-integration-here-location-suite-places:
+    parameters:
+      ConnectSourceAccount: '596415240780'
+      ConnectSourceArn: arn:aws:connect:us-east-1:596415240780:instance/2e49f79e-fe45-46e9-a26a-4485af8456f1
+      HLSAppCode: deadbeef
+      HLSAppId: deadbeef
+    regions:
+    # - ap-northeast-1
+    # - ap-northeast-2
+    # - ap-south-1
+    # - ap-southeast-1
+    # - ap-southeast-2
+    # - ca-central-1
+    # - eu-central-1
+    # - eu-west-1
+    # - sa-east-1
+    - us-east-1
+    # - us-east-2
+    # - us-west-1
+    # - us-west-2
+    template: templates/here-integration-places.template.yaml
+  connect-integration-here-location-suite-routing:
+    parameters:
+      ConnectSourceAccount: '596415240780'
+      ConnectSourceArn: arn:aws:connect:us-east-1:596415240780:instance/2e49f79e-fe45-46e9-a26a-4485af8456f1
+      HLSAppCode: deadbeef
+      HLSAppId: deadbeef
+    regions:
+    # - ap-northeast-1
+    # - ap-northeast-2
+    # - ap-south-1
+    # - ap-southeast-1
+    # - ap-southeast-2
+    # - ca-central-1
+    # - eu-central-1
+    # - eu-west-1
+    # - sa-east-1
+    - us-east-1
+    # - us-east-2
+    # - us-west-1
+    # - us-west-2
+    template: templates/here-integration-routing.template.yaml
