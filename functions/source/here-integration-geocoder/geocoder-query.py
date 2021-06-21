@@ -53,16 +53,16 @@ def geocode(state, city, address):
   try:
     json = response.json()
   except Exception:
-    print("no response, URL", response.url)
+    print(("no response, URL", response.url))
     return None
   result = json["Response"]["View"][0]["Result"][0]
   if result is None:
-    print("no position, JSON", json)
+    print(("no position, JSON", json))
     return None
   # unpack lat/lng
   position = result["Location"]["DisplayPosition"]
   if position is None:
-    print("no position, RESULT", result)
+    print(("no position, RESULT", result))
     return None
   lat = float(position['Latitude'])
   lng = float(position['Longitude'])

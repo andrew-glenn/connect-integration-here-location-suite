@@ -35,9 +35,9 @@ def handler(event, context):
         "cat": "sights-museums"
       }
       # request
-      print "Running places search for sights and museums in Berlin"
+      print("Running places search for sights and museums in Berlin")
       response = requests.get(url, params=parameters)
-      print "Status code: " + str(response.status_code)
+      print("Status code: " + str(response.status_code))
       if response.status_code != 200:
         raise Exception('Error: Status code received is not 200')
     elif event['RequestType'] == 'Update':
@@ -46,5 +46,5 @@ def handler(event, context):
       pass
     cfnresponse.send(event, context, cfnresponse.SUCCESS, {}, '')
   except:
-    print traceback.print_exc()
+    print(traceback.print_exc())
     cfnresponse.send(event, context, cfnresponse.FAILED, {}, '')

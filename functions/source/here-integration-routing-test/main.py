@@ -37,9 +37,9 @@ def handler(event, context):
         "waypoint1": "52.5206,13.3862"
       }
       # request
-      print "Running routing request in Berlin"
+      print("Running routing request in Berlin")
       response = requests.get(url, params=parameters)
-      print "Status code: " + str(response.status_code)
+      print("Status code: " + str(response.status_code))
       if response.status_code != 200:
         raise Exception('Error: Status code received is not 200')
     elif event['RequestType'] == 'Update':
@@ -48,5 +48,5 @@ def handler(event, context):
       pass
     cfnresponse.send(event, context, cfnresponse.SUCCESS, {}, '')
   except:
-    print traceback.print_exc()
+    print(traceback.print_exc())
     cfnresponse.send(event, context, cfnresponse.FAILED, {}, '')

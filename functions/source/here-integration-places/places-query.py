@@ -59,26 +59,26 @@ def getPlaces(lat, lng, radius, category):
   try:
     json = response.json()
   except Exception:
-    print("no response", response.url)
+    print(("no response", response.url))
     return None
   if "results" not in json:
-    print("invalid response", json)
+    print(("invalid response", json))
     return None
   # extract places information
   places = json["results"]["items"]
   extractPlace = lambda p: {
     "placeId": p['id'],
-    "lat": p["position"][0] if "position" in p.keys() else None,
-    "lng": p["position"][1] if "position" in p.keys() else None,
-    "distance": p["distance"] if "distance" in p.keys() else None,
-    "name": p["title"] if "title" in p.keys() else None,
-    "address": p["vicinity"] if "vicinity" in p.keys() else None,
-    "url": p["href"] if "href" in p.keys() else None,
-    "locationType": "display" if "position" in p.keys() else None,
-    "averageRating": p["averageRating"] if "averageRating" in p.keys() else None,
-    "categoryTitle": p["category"]["title"] if "category" in p.keys() else None,
-    "categoryId": p["category"]["id"] if "category" in p.keys() else None
+    "lat": p["position"][0] if "position" in list(p.keys()) else None,
+    "lng": p["position"][1] if "position" in list(p.keys()) else None,
+    "distance": p["distance"] if "distance" in list(p.keys()) else None,
+    "name": p["title"] if "title" in list(p.keys()) else None,
+    "address": p["vicinity"] if "vicinity" in list(p.keys()) else None,
+    "url": p["href"] if "href" in list(p.keys()) else None,
+    "locationType": "display" if "position" in list(p.keys()) else None,
+    "averageRating": p["averageRating"] if "averageRating" in list(p.keys()) else None,
+    "categoryTitle": p["category"]["title"] if "category" in list(p.keys()) else None,
+    "categoryId": p["category"]["id"] if "category" in list(p.keys()) else None
   }
-  places = map(extractPlace, places)
+  places = list(map(extractPlace, places))
   # return as list
   return list(places)

@@ -57,7 +57,7 @@ Resources:
       MemorySize: 128
       Role:
         Fn::GetAtt: GeocoderTestFunctionExecutionRole.Arn
-      Runtime: python2.7
+      Runtime: python3.8
       Timeout: 30
       Code:
         S3Bucket: aws-quickstart
@@ -93,7 +93,7 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       Handler: geocoder-query.lambda_handler
-      Runtime: python2.7
+      Runtime: python3.8
       Description: HERE HLS Geocoder API
       MemorySize: 128
       Timeout: 60
